@@ -1,5 +1,5 @@
 class ShippingCost < ActiveHash::Base
-  self.date = [
+  self.data = [
     { id: 1, name: '---'},
     { id: 2, name: '未払い(購入者負担)'},
     { id: 3, naem: '送料込み(出品者負担)'}
