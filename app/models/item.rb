@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :shipping_day
 
-  with_options presence: true do 
+  with_options presence: true do
     validates :name
     validates :explanation
     validates :image
