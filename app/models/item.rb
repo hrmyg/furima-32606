@@ -15,8 +15,7 @@ class Item < ApplicationRecord
     validates :image
   end
 
-  validates :category_id, :state_id, :shipping_cost_id, :prefecture_id, :shipping_day_id, numericality: { other_then: 1 }
-
+  validates :category_id, :state_id, :shipping_cost_id, :prefecture_id, :shipping_day_id, numericality: { other_than: 1 }
   validates :price, numericality: { with: /\A[0-9]+\z/ }
 
   validates_inclusion_of :price, in: 300..9_999_999

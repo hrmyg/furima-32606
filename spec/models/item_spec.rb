@@ -33,25 +33,50 @@ RSpec.describe '商品出品機能', type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include("Category is not a number")
     end
+    it 'category_idは1以外でないと登録できない' do
+      @item.category_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Category must be other than 1")
+    end
     it 'state_idが空では登録できない' do
       @item.state_id =""
       @item.valid?
       expect(@item.errors.full_messages).to include("State is not a number")
+    end
+    it 'state_idは1以外でないと登録できない' do
+      @item.state_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("State must be other than 1")
     end
     it 'shipping_cost_idが空では登録できない' do
       @item.shipping_cost_id = ""
       @item.valid?
       expect(@item.errors.full_messages).to include("Shipping cost is not a number")
     end
+    it 'shipping_cost_idは1以外でないと登録できない' do
+      @item.shipping_cost_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Shipping cost must be other than 1")
+    end
     it 'prefecture_idが空では登録できない' do
       @item.prefecture_id = ""
       @item.valid?
       expect(@item.errors.full_messages).to include("Prefecture is not a number")
     end
+    it 'prefecture_idは1以外でないと登録できない' do
+      @item.prefecture_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+    end
     it 'shipping_day_idが空では登録できない' do
       @item.shipping_day_id = ""
       @item.valid?
       expect(@item.errors.full_messages).to include("Shipping day is not a number")
+    end
+    it 'shipping_day_idは1以外でないと登録できない' do
+      @item.shipping_day_id = 1
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Shipping day must be other than 1")
     end
     it 'priceが空では登録できない' do
       @item.price = ""
