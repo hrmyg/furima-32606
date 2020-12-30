@@ -1,6 +1,6 @@
 class Buy
   include ActiveModel::Model
-  attr_accessor :post_code, :prefecture_id, :city, :address, :building, :phone_number, :item_id, :user_id
+  attr_accessor :post_code, :prefecture_id, :city, :address, :building, :phone_number, :item_id, :user_id, :token
 
   with_options presence: true do
     validates :post_code, format: {with: /\A\d{3}[-]\d{4}\z/}
@@ -8,6 +8,7 @@ class Buy
     validates :city
     validates :address
     validates :phone_number, format: {with: /\A\d{10}\z|\A\d{11}\z/}
+    validates :token
   end
 
   def save
