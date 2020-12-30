@@ -6,6 +6,8 @@ before_action :authenticate_user!, only: [:index]
     @buy = Buy.new
     if current_user.id == @item.user_id
       redirect_to root_path
+    elsif current_user.id == @item.buy_history.user.id
+      redirect_to root_path
     end
   end
 
