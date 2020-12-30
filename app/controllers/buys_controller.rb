@@ -1,8 +1,12 @@
 class BuysController < ApplicationController
 before_action :set_item, only: [:index, :create]
+before_action :authenticate_user!, only: [:index]
 
   def index
     @buy = Buy.new
+    if current_user.id == @item.user_id
+      redirect_to root_path
+    end
   end
 
 
